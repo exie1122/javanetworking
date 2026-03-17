@@ -1,60 +1,58 @@
-Simple Packet Capturer Made in Java, with PCAP4J.
+# Java Packet Capturer (PCAP4J)
 
-Requires sudo 
+# A simple packet capturing tool written in Java using the PCAP4J library.
+# Designed for quick packet inspection and experimentation on Linux and macOS.
 
-2024-05-27 
-Tested on:
-Raspberry pi 3B+ 
-Raspberry pi 4
-Macbook Pro
+# --------------------------------------------------
+# Requirements
+# --------------------------------------------------
+# - Java (JDK 8+)
+# - sudo/root privileges (required for packet capture)
+# - Tested on:
+#   - Raspberry Pi 3B+
+#   - Raspberry Pi 4
+#   - macOS (MacBook Pro)
 
-Mac commands:
-```bash
-cd /  [user] / Downloads  /  javanetworking-main
-sudo java -jar "javanetworking .jar"
-```
+# --------------------------------------------------
+# Linux (Raspberry Pi) Setup & Run
+# --------------------------------------------------
 
-
-
-(Commands to run and install assuming you're on a pi);
-```bash
 sudo apt-get update
-
-sudo apt-get install git
+sudo apt-get install -y git default-jdk
 
 git clone https://github.com/exie1122/javanetworking.git
+cd javanetworking
 
-cd javanetworking/
+# Fix jar filename (if needed)
+mv "javanetworking .jar" javanetworking.jar
 
-sudo apt-get install default-jdk
-
-cd javanetworking/
-
-mv 'javanetworking .jar' javanetworking.jar
-
+# Run
 sudo java -jar javanetworking.jar
-```
 
+# --------------------------------------------------
+# macOS Setup & Run
+# --------------------------------------------------
 
+cd ~/Downloads/javanetworking-main
 
+# Optional: rename jar to remove spaces
+mv "javanetworking .jar" javanetworking.jar
 
+# Run
+sudo java -jar javanetworking.jar
 
+# --------------------------------------------------
+# Notes
+# --------------------------------------------------
+# - Requires sudo because packet capture needs raw socket access
+# - Works on both Linux (Raspberry Pi) and macOS
+# - Uses PCAP4J under the hood
 
+# --------------------------------------------------
+# Screenshots
+# --------------------------------------------------
+# macOS:
+# https://github.com/exie1122/javanetworking/assets/165369920/73324630-7d9c-4211-9824-4196019f23c7
 
-
-
-
-(macbook)
-
-<img width="590" alt="Screenshot 2024-05-28 at 9 27 49 AM" src="https://github.com/exie1122/javanetworking/assets/165369920/73324630-7d9c-4211-9824-4196019f23c7">
-
-
-
-
-
-
-
-
-
-(Raspbery Pi)
-![imageedit_1_7885781967](https://github.com/exie1122/javanetworking/assets/165369920/2d872538-5411-4020-9e41-e4477bbfeea1)
+# Raspberry Pi:
+# https://github.com/exie1122/javanetworking/assets/165369920/2d872538-5411-4020-9e41-e4477bbfeea1
